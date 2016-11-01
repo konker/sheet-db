@@ -59,7 +59,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sheet-db/dev/1477959063103-2016-11-01T00:11:03.103Z/sheet-db.zip"
+          "S3Key": "serverless/sheet-db/dev/1478017942111-2016-11-01T16:32:22.111Z/sheet-db.zip"
         },
         "FunctionName": "sheet-db-dev-sheet",
         "Handler": "com.luxvelocitas.sheetdb.api.get.Handler",
@@ -95,23 +95,23 @@
         }
       }
     },
-    "ApiGatewayResourceSheetIdVar": {
+    "ApiGatewayResourceSheetSheetidVar": {
       "Type": "AWS::ApiGateway::Resource",
       "Properties": {
         "ParentId": {
           "Ref": "ApiGatewayResourceSheet"
         },
-        "PathPart": "{id}",
+        "PathPart": "{sheetId}",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
       }
     },
-    "ApiGatewayResourceSheetIdVarColVarRowVar": {
+    "ApiGatewayResourceSheetSheetidVarColVarRowVar": {
       "Type": "AWS::ApiGateway::Resource",
       "Properties": {
         "ParentId": {
-          "Ref": "ApiGatewayResourceSheetIdVarColVar"
+          "Ref": "ApiGatewayResourceSheetSheetidVarColVar"
         },
         "PathPart": "{row}",
         "RestApiId": {
@@ -119,11 +119,11 @@
         }
       }
     },
-    "ApiGatewayResourceSheetIdVarColVar": {
+    "ApiGatewayResourceSheetSheetidVarColVar": {
       "Type": "AWS::ApiGateway::Resource",
       "Properties": {
         "ParentId": {
-          "Ref": "ApiGatewayResourceSheetIdVar"
+          "Ref": "ApiGatewayResourceSheetSheetidVar"
         },
         "PathPart": "{col}",
         "RestApiId": {
@@ -312,7 +312,7 @@
         }
       }
     },
-    "ApiGatewayMethodSheetIdVarGet": {
+    "ApiGatewayMethodSheetSheetidVarGet": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "AuthorizationType": "NONE",
@@ -486,14 +486,14 @@
           ]
         },
         "ResourceId": {
-          "Ref": "ApiGatewayResourceSheetIdVar"
+          "Ref": "ApiGatewayResourceSheetSheetidVar"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
       }
     },
-    "ApiGatewayMethodSheetIdVarColVarRowVarGet": {
+    "ApiGatewayMethodSheetSheetidVarColVarRowVarGet": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "AuthorizationType": "NONE",
@@ -667,7 +667,7 @@
           ]
         },
         "ResourceId": {
-          "Ref": "ApiGatewayResourceSheetIdVarColVarRowVar"
+          "Ref": "ApiGatewayResourceSheetSheetidVarColVarRowVar"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -718,7 +718,7 @@
         }
       }
     },
-    "ApiGatewayMethodSheetIdVarOptions": {
+    "ApiGatewayMethodSheetSheetidVarOptions": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "AuthorizationType": "NONE",
@@ -755,14 +755,14 @@
           ]
         },
         "ResourceId": {
-          "Ref": "ApiGatewayResourceSheetIdVar"
+          "Ref": "ApiGatewayResourceSheetSheetidVar"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
       }
     },
-    "ApiGatewayMethodSheetIdVarColVarRowVarOptions": {
+    "ApiGatewayMethodSheetSheetidVarColVarRowVarOptions": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "AuthorizationType": "NONE",
@@ -799,14 +799,14 @@
           ]
         },
         "ResourceId": {
-          "Ref": "ApiGatewayResourceSheetIdVarColVarRowVar"
+          "Ref": "ApiGatewayResourceSheetSheetidVarColVarRowVar"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
       }
     },
-    "ApiGatewayDeployment1477959063151": {
+    "ApiGatewayDeployment1478017942149": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -816,8 +816,8 @@
       },
       "DependsOn": [
         "ApiGatewayMethodSheetGet",
-        "ApiGatewayMethodSheetIdVarGet",
-        "ApiGatewayMethodSheetIdVarColVarRowVarGet"
+        "ApiGatewayMethodSheetSheetidVarGet",
+        "ApiGatewayMethodSheetSheetidVarColVarRowVarGet"
       ]
     },
     "SheetLambdaPermissionApiGateway": {

@@ -51,12 +51,12 @@ functions:
           cors: true
 
       - http:
-          path: sheet/{id}
+          path: sheet/{sheetId}
           method: get
           cors: true
 
       - http:
-          path: sheet/{id}/{col}/{row}
+          path: sheet/{sheetId}/{col}/{row}
           method: get
           cors: true
 

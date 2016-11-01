@@ -3,19 +3,27 @@ package com.luxvelocitas.sheetdb.api.get;
 import java.util.Map;
 
 public class Request {
-
-    String id;
+    Map<String,String> pathParameters;
+    String sheetId;
     String row;
     String col;
 
     public Request() { }
 
-    public String getId() {
-        return id;
+    public Map<String,String> getPathParameters() {
+        return pathParameters;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setPathParameters(Map<String,String> pathParameters) {
+        this.pathParameters = pathParameters;
+    }
+
+    public String getSheetId() {
+        return sheetId;
+    }
+
+    public void setSheetId(String sheetId) {
+        this.sheetId = sheetId;
     }
 
     public String getCol() {
