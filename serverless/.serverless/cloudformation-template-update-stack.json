@@ -59,7 +59,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sheet-db/dev/1477842224514-2016-10-30T15:43:44.514Z/sheet-db.zip"
+          "S3Key": "serverless/sheet-db/dev/1477959063103-2016-11-01T00:11:03.103Z/sheet-db.zip"
         },
         "FunctionName": "sheet-db-dev-sheet",
         "Handler": "com.luxvelocitas.sheetdb.api.get.Handler",
@@ -107,25 +107,25 @@
         }
       }
     },
-    "ApiGatewayResourceSheetIdVarRowVarColVar": {
+    "ApiGatewayResourceSheetIdVarColVarRowVar": {
       "Type": "AWS::ApiGateway::Resource",
       "Properties": {
         "ParentId": {
-          "Ref": "ApiGatewayResourceSheetIdVarRowVar"
+          "Ref": "ApiGatewayResourceSheetIdVarColVar"
         },
-        "PathPart": "{col}",
+        "PathPart": "{row}",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
       }
     },
-    "ApiGatewayResourceSheetIdVarRowVar": {
+    "ApiGatewayResourceSheetIdVarColVar": {
       "Type": "AWS::ApiGateway::Resource",
       "Properties": {
         "ParentId": {
           "Ref": "ApiGatewayResourceSheetIdVar"
         },
-        "PathPart": "{row}",
+        "PathPart": "{col}",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
@@ -493,7 +493,7 @@
         }
       }
     },
-    "ApiGatewayMethodSheetIdVarRowVarColVarGet": {
+    "ApiGatewayMethodSheetIdVarColVarRowVarGet": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "AuthorizationType": "NONE",
@@ -667,7 +667,7 @@
           ]
         },
         "ResourceId": {
-          "Ref": "ApiGatewayResourceSheetIdVarRowVarColVar"
+          "Ref": "ApiGatewayResourceSheetIdVarColVarRowVar"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -762,7 +762,7 @@
         }
       }
     },
-    "ApiGatewayMethodSheetIdVarRowVarColVarOptions": {
+    "ApiGatewayMethodSheetIdVarColVarRowVarOptions": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
         "AuthorizationType": "NONE",
@@ -799,14 +799,14 @@
           ]
         },
         "ResourceId": {
-          "Ref": "ApiGatewayResourceSheetIdVarRowVarColVar"
+          "Ref": "ApiGatewayResourceSheetIdVarColVarRowVar"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
       }
     },
-    "ApiGatewayDeployment1477842224605": {
+    "ApiGatewayDeployment1477959063151": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -817,7 +817,7 @@
       "DependsOn": [
         "ApiGatewayMethodSheetGet",
         "ApiGatewayMethodSheetIdVarGet",
-        "ApiGatewayMethodSheetIdVarRowVarColVarGet"
+        "ApiGatewayMethodSheetIdVarColVarRowVarGet"
       ]
     },
     "SheetLambdaPermissionApiGateway": {

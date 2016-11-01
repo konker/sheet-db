@@ -1,35 +1,36 @@
 package com.luxvelocitas.sheetdb.api.get;
 
+import java.util.Map;
+
 public class Request {
 
-    private String mId;
-    private String mRow;
-    private String mCol;
+    String id;
+    String row;
+    String col;
 
-    public Request() {
-    }
+    public Request() { }
 
     public String getId() {
-        return mId;
-    }
-
-    public String getRow() {
-        return mRow;
-    }
-
-    public String getCol() {
-        return mCol;
+        return id;
     }
 
     public void setId(String id) {
-        mId = id;
+        this.id = id;
     }
 
-    public void setRow(String row) {
-        mRow = row;
+    public String getCol() {
+        return col;
     }
 
     public void setCol(String col) {
-        mCol = col;
+        this.col = col;
+    }
+
+    public String getRow() {
+        return row;
+    }
+
+    public void setRow(String row) {
+        this.row = row;
     }
 }
